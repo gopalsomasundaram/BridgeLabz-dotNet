@@ -4,6 +4,7 @@ using System.Text;
 
 namespace ConsoleAppTest
 {
+    //hotfix for testing git stash
     class Calculator
     {
         public static int Add(int x, int y)
