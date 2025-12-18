@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleAppTest.Day2Level1Problems
+namespace ConsoleAppTest.Day2Level3Problems
 {
-    class Level1Main
+    internal class Level3Main
     {
         public static void Main(string[] args)
         {
-            MultiplicationTables.print();
+            Calculator.calc();
         }
     }
 }

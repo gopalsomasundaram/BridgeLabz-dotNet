@@ -5,7 +5,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>ConsoleAppTest.Day1WhatsAppProblems.WhatsAppMain</StartupObject>
+    <StartupObject>ConsoleAppTest.Day2Level3Problems.Level3Main</StartupObject>
   </PropertyGroup>
 
 </Project>
