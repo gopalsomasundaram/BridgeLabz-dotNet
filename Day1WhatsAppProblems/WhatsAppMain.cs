@@ -12,12 +12,12 @@ namespace ConsoleAppTest.Day1WhatsAppProblems
             //CheckAllowanceFoodOrder.check();
             //CheckDivisibilty.check();
             //CheckInt.check();
-            //PasswordStrength.checkStrength();
+            PasswordStrength.checkStrength();
             //PositveOrNegative.getSign();
             //SimplifyIf.deepIf();
             //SimplifyIf.simpleIf();
             //Temperature.checkTemp();
-            CheckAllowanceFoodOrder.check();
+            //CheckAllowanceFoodOrder.check();
 
             //small change to shelf
         }

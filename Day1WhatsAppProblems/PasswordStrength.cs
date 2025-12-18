@@ -31,11 +31,15 @@ namespace ConsoleAppTest.Day1WhatsAppProblems
         static bool CheckSpecialChar(string passwd)
         {
             char[] SpecialChars = "!@#$%^&*(){}[]:;'\"<,>.?/".ToCharArray();
-            if (passwd.IndexOfAny(SpecialChars) != -1)
+            string test = passwd;
+            bool checker = test.ContainsAny(SpecialChars);
+            if (checker) return true;
+            else return false;
+            /*if (passwd.IndexOfAny(SpecialChars) != -1)
             {
                 return true;
             }
-            else { return false; }
+            else { return false; }*/
         }
     }
 }
