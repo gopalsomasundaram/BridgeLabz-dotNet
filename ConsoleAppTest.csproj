@@ -5,7 +5,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>ConsoleAppTest.Day4Level2Problems.RandomNumbers</StartupObject>
+    <StartupObject>ConsoleAppTest.Day4Level3Problems.MeanMaxMinHeights</StartupObject>
   </PropertyGroup>
 
 </Project>
