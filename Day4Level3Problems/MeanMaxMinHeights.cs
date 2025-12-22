@@ -52,6 +52,11 @@ namespace ConsoleAppTest.Day4Level3Problems
         {
             var obj = new MeanMaxMinHeights();
             int[] arr = obj.GenerateRandomHeights();
+            Console.WriteLine("The generated heights are: ");
+            foreach (int i in arr)
+            {
+                Console.WriteLine(i);
+            }
             Console.WriteLine($"The mean height is {obj.FindMean(arr)}");
             Console.WriteLine($"The max height is {obj.FindTallest(arr)}");
             Console.WriteLine($"The min height is {obj.FindShortest(arr)}");
