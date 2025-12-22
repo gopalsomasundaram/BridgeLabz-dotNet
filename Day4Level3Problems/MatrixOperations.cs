@@ -6,9 +6,9 @@ namespace ConsoleAppTest.Day4Level3Problems
 {
     internal class MatrixOperations
     {
-        public static int[,] GenerateMatrix(int m, int n)
+        public static double[,] GenerateMatrix(int m, int n)
         {
-            int[,] matrix = new int[m, n];
+            double[,] matrix = new double[m, n];
             Random random = new Random();
             for(int i = 0; i < m; ++i)
             {
@@ -19,7 +19,7 @@ namespace ConsoleAppTest.Day4Level3Problems
             }
             return matrix;
         }
-        static int[,] AddMatrices(int[,] matrix1, int[,] matrix2)
+        static double[,] AddMatrices(double[,] matrix1, double[,] matrix2)
         {
             if ((matrix1.GetLength(0) != matrix2.GetLength(0)) && (matrix1.GetLength(1) != matrix2.GetLength(1)))
             {
@@ -27,7 +27,7 @@ namespace ConsoleAppTest.Day4Level3Problems
             }
             int m = matrix1.GetLength(0);
             int n = matrix2.GetLength(0);
-            int[,] resultMatrix = new int[m, n];
+            double[,] resultMatrix = new double[m, n];
             for(int i = 0; i < m; ++i)
             {
                 for(int j = 0; j < n; ++j)
@@ -37,7 +37,7 @@ namespace ConsoleAppTest.Day4Level3Problems
             }
             return resultMatrix;
         }
-        static int[,] SubtractMatrices(int[,] matrix1, int[,] matrix2)
+        static double[,] SubtractMatrices(double[,] matrix1, double[,] matrix2)
         {
             if((matrix1.GetLength(0) != matrix2.GetLength(0)) && (matrix1.GetLength(1) != matrix2.GetLength(1)))
             {
@@ -45,7 +45,7 @@ namespace ConsoleAppTest.Day4Level3Problems
             }
             int m = matrix1.GetLength(0);
             int n = matrix2.GetLength(0);
-            int[,] resultMatrix = new int[m, n];
+            double[,] resultMatrix = new double[m, n];
             for (int i = 0; i < m; ++i)
             {
                 for (int j = 0; j < n; ++j)
@@ -55,7 +55,7 @@ namespace ConsoleAppTest.Day4Level3Problems
             }
             return resultMatrix;
         }
-        static int[,] MultiplyMatrices(int[,] matrix1, int[,] matrix2)
+        static double[,] MultiplyMatrices(double[,] matrix1, double[,] matrix2)
         {
             int m1 = matrix1.GetLength(0);
             int n1 = matrix1.GetLength(1);
@@ -67,7 +67,7 @@ namespace ConsoleAppTest.Day4Level3Problems
                 throw new InvalidOperationException("Invalid input given for matric multiplication");
             }
 
-            int[,] result = new int[m1, n2];
+            double[,] result = new double[m1, n2];
             for(int i = 0; i< m1; ++i)
             {
                 for(int j =0; j < n2; ++j)
@@ -80,11 +80,11 @@ namespace ConsoleAppTest.Day4Level3Problems
             }
             return result;
         }
-        static int[,] Transpose(int[,] matrix)
+        static double[,] Transpose(double[,] matrix)
         {
             int m = matrix.GetLength(0);
             int n = matrix.GetLength(1);
-            int[,] result = new int[n, m];
+            double[,] result = new double[n, m];
             for(int i = 0; i < m; ++i)
             {
                 for(int j = 0; j < n; ++j)
@@ -94,7 +94,7 @@ namespace ConsoleAppTest.Day4Level3Problems
             }
             return result;
         }
-        static void DisplayMatrix(int[,] arr)
+        static void DisplayMatrix(double[,] arr)
         {
             int m = arr.GetLength(0);
             int n = arr.GetLength(1);
@@ -102,12 +102,12 @@ namespace ConsoleAppTest.Day4Level3Problems
             {
                 for(int j = 0;j<n; ++j)
                 {
-                    Console.Write($"{arr[i, j]} ");
+                    Console.Write($"{arr[i, j]:F4} ");
                 }
                 Console.WriteLine();
             }
         }
-        static int Determinant2D(int[,] arr)
+        static double Determinant2D(double[,] arr)
         {
             if(arr.GetLength(0) != 2 || arr.GetLength(1) != 2)
             {
@@ -115,7 +115,7 @@ namespace ConsoleAppTest.Day4Level3Problems
             }
             return (arr[0, 0] * arr[1, 1] - arr[0, 1] * arr[1, 0]);
         }
-        static int Determinant3D(int[,] arr)
+        static double Determinant3D(double[,] arr)
         {
             if(arr.GetLength(0)!= 3 || arr.GetLength(1) != 3)
             {
@@ -123,9 +123,9 @@ namespace ConsoleAppTest.Day4Level3Problems
             }
             return (arr[0, 0] * Determinant2D(GetMinor(arr, 0, 0)) - arr[0, 1] * Determinant2D(GetMinor(arr, 0, 1)) + arr[0, 2] * Determinant2D(GetMinor(arr, 0, 2)));
         }
-        static int[,] GetMinor(int[,] arr, int rowToRemove, int colToRemove)
+        static double[,] GetMinor(double[,] arr, int rowToRemove, int colToRemove)
         {
-            int[,] result = new int[2, 2];
+            double[,] result = new double[2, 2];
             int m = 0;
             int n = 0;
             for(int i = 0; i <= 2; ++i)
@@ -143,19 +143,19 @@ namespace ConsoleAppTest.Day4Level3Problems
             }
             return result;
         }
-        static int[,] Adjoint2D(int[,] arr)
+        static double[,] Adjoint2D(double[,] arr)
         {
-            int temp = arr[0, 0];
+            double temp = arr[0, 0];
             arr[0, 0] = arr[1, 1];
             arr[1, 1] = temp;
             arr[0, 1] *= -1;
             arr[1,0] *= -1;
             return arr;
         }
-        static int[,] Inverse2D(int[,] arr)
+        static double[,] Inverse2D(double[,] arr)
         {
             arr = Adjoint2D(arr);
-            int detArr = Determinant2D(arr);
+            double detArr = Determinant2D(arr);
             for(int i = 0; i < arr.GetLength(0); ++i)
             {
                 for(int j = 0; j < arr.GetLength(1); ++j)
@@ -165,31 +165,36 @@ namespace ConsoleAppTest.Day4Level3Problems
             }
             return arr;
         }
-        static int[,] Inverse3D(int[,] arr)
+        static double[,] Inverse3D(double[,] arr)
         {
-            int A = arr[1, 1] * arr[2, 2] - arr[1, 2] * arr[2, 1];
-            int B = (arr[1, 0] * arr[2,2] - arr[1,2] * arr[2,0])*(-1);
-            int C = arr[1, 0] * arr[2, 1] - arr[1, 1] * arr[2, 0];
-            int D = (arr[0, 1] * arr[2,2] - arr[0,2] * arr[2,1]) * (-1);
-            int E = arr[0, 0] * arr[2, 2] - arr[0, 2] * arr[2, 0];
-            int F = (arr[0, 0] * arr[2,1] - arr[0,1]* arr[2,0]) * (-1);
-            int G = arr[0, 1] * arr[1, 2] - arr[0, 2] * arr[1, 1];
-            int H = (arr[0,0] * arr[1,2] - arr[0,2] * arr[1,0]) * (-1);
-            int I = arr[0, 0] * arr[1, 1] - arr[0, 1] * arr[1, 0];
+            double det = Determinant3D(arr);
+            if (det == 0)
+                throw new Exception("Matrix is singular. Inverse does not exist.");
+            double A = arr[1, 1] * arr[2, 2] - arr[1, 2] * arr[2, 1];
+            double B = (arr[1, 0] * arr[2,2] - arr[1,2] * arr[2,0])*(-1);
+            double C = arr[1, 0] * arr[2, 1] - arr[1, 1] * arr[2, 0];
+            double D = (arr[0, 1] * arr[2,2] - arr[0,2] * arr[2,1]) * (-1);
+            double E = arr[0, 0] * arr[2, 2] - arr[0, 2] * arr[2, 0];
+            double F = (arr[0, 0] * arr[2,1] - arr[0,1]* arr[2,0]) * (-1);
+            double G = arr[0, 1] * arr[1, 2] - arr[0, 2] * arr[1, 1];
+            double H = (arr[0,0] * arr[1,2] - arr[0,2] * arr[1,0]) * (-1);
+            double I = arr[0, 0] * arr[1, 1] - arr[0, 1] * arr[1, 0];
 
-            int[,] result = new int[,] { { A, B, C }, { D,E,F},{ G,H,I} };
-
-            result = Transpose(result);
-
-            int detResult = Determinant3D(result);
-            for(int i = 0; i < result.GetLength(0); ++i)
+            double[,] adjugate = 
             {
-                for(int j = 0; j < result.GetLength(1); ++j)
+                { A, D, G },
+                { B, E, H },
+                { C, F, I }
+            };
+
+            for(int i = 0; i < 3; ++i)
+            {
+                for(int j = 0; j < 3; ++j)
                 {
-                    arr[i,j] /= detResult;
+                    adjugate[i,j] /= det;
                 }
             }
-            return result;
+            return adjugate;
         }
         public static void Main()
         {
@@ -202,8 +207,8 @@ namespace ConsoleAppTest.Day4Level3Problems
             Console.WriteLine("Enter number of columns second matrix:");
             int n2 = int.Parse(Console.ReadLine());
 
-            int[,] arr1 = GenerateMatrix(m1, n1);
-            int[,] arr2= GenerateMatrix(m2, n2);
+            double[,] arr1 = GenerateMatrix(m1, n1);
+            double[,] arr2= GenerateMatrix(m2, n2);
 
             Console.WriteLine("The first generated matrix:");
             DisplayMatrix(arr1);
