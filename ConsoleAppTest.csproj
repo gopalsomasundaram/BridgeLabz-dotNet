@@ -5,7 +5,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>ConsoleAppTest.UseCase7</StartupObject>
+    <StartupObject>ConsoleAppTest.Day5Level1Problems.Uppercase</StartupObject>
   </PropertyGroup>
 
 </Project>
