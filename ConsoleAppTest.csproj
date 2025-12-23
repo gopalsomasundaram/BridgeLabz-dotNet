@@ -5,7 +5,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>ConsoleAppTest.Palindrome</StartupObject>
+    <StartupObject>ConsoleAppTest.Anagrams</StartupObject>
   </PropertyGroup>
 
 </Project>
