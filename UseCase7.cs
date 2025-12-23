@@ -63,10 +63,10 @@ namespace ConsoleAppTest
                     }
                     else if (moveOption == 2)
                     {
-                        Console.WriteLine("Player A gets option of ladder he can play again after this move");
+                        Console.WriteLine("Player B gets option of ladder he can play again after this move");
                         //ladder
                         playerBPosition = UseCase5.IncrementPosition(playerBPosition, dieMove);
-                        Console.WriteLine($"After moving forward Player A is at position {playerBPosition}");
+                        Console.WriteLine($"After moving forward Player B is at position {playerBPosition}");
                         if (playerBPosition == 99)
                         {
                             Console.WriteLine("Player B wins");
@@ -80,7 +80,7 @@ namespace ConsoleAppTest
                     {
                         Console.WriteLine("Player B gets option of snake ");
                         playerBPosition = UseCase4.DecrementPosition(playerBPosition, dieMove);
-                        Console.WriteLine($"After moving backward player A is at position of {playerBPosition}");
+                        Console.WriteLine($"After moving backward player B is at position of {playerBPosition}");
                         break;
                     }
                 }
