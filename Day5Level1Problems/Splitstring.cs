@@ -9,12 +9,12 @@ namespace ConsoleAppTest.Day5Level1Problems
         static int GetLength(string str)
         {
             int count = 0;
-            Console.WriteLine($"Getting Length of {str}");
+            //Console.WriteLine($"Getting Length of {str}");
             while (true)
             {
                 try
                 {
-                    Console.WriteLine(str[count++]);
+                    if(str[count++]==null);
                 }
                 catch (IndexOutOfRangeException ex)
                 {
@@ -27,7 +27,7 @@ namespace ConsoleAppTest.Day5Level1Problems
         {
             text = text.Trim();
             string.Concat(text, " ");
-            Console.WriteLine($"Given input is {text}");
+            //Console.WriteLine($"Given input is {text}");
             int spaceCount = 0;
             int len = GetLength(text);
 
@@ -45,7 +45,7 @@ namespace ConsoleAppTest.Day5Level1Problems
         {
             int len = GetLength(text);
             int numWords = GetNumberOfWords(text);
-            Console.WriteLine($"input length {len} and number of words: {numWords}");
+            //Console.WriteLine($"input length {len} and number of words: {numWords}");
             string[] words = new string[numWords+1];
             int index = 0;
             for(int i = 0; i < len - 1; ++i)
@@ -54,7 +54,7 @@ namespace ConsoleAppTest.Day5Level1Problems
                 {
                     if (i == ' ') continue;
                     if (text[j] == ' ')
-                    {
+                    {   
                         //Console.WriteLine($"Adding {text.Substring(i, j - i)} to string array");
                         words[index++] = text.Substring(i, j - i);
                         i = j+1;
@@ -76,6 +76,7 @@ namespace ConsoleAppTest.Day5Level1Problems
             Console.WriteLine("Enter string:");
             string str = Console.ReadLine();
             string[] arr = SplitToWords(str);
+
             Console.WriteLine("Words of the given string are: ");
             for(int i = 0; i < arr.Length; ++i)
             {
@@ -89,6 +90,7 @@ namespace ConsoleAppTest.Day5Level1Problems
                 result[i, 0] = arr[i];
                 result[i, 1] = Convert.ToString(GetLength(arr[i]));
                 Console.WriteLine($"{result[i, 0]} {result[i, 1]}");
+                //Console.WriteLine("Debgging, "+i);
             }
         }
     }
